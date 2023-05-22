@@ -4,12 +4,12 @@
 #include <stdio.h>
 using namespace std;
 
-Car::Car()
+Car::Car(int Year, const char* cus, int velocity)
 {
-	// Set the default values to Car variables
-    ReleaseYear = 0;
-    customer = "";
-    speed = 0;
+	// Set the values to Car variables using parameterized constructor
+    ReleaseYear = Year;
+    customer = cus;
+    speed = velocity;
 }
 
 void Car::getReleaseYear()
@@ -48,9 +48,10 @@ Car::~Car()
 }
 
 
+
 int main()
 {
-    Car Audi;
+    Car Audi(2022, "AUDI", 220);
 
     for(int i=0; i<5; i++)
     {

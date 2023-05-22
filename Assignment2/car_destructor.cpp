@@ -1,57 +1,58 @@
+#include "car.hpp"
+
 #include <iostream>
 #include <stdio.h>
-
 using namespace std;
 
-class Car
+Car::Car(int Year, const char* cus, int velocity)
 {
-private: int ReleaseYear;
-         char customer;
-         int speed;
+	// Set the values to Car variables using parameterized constructor
+    ReleaseYear = Year;
+    customer = cus;
+    speed = velocity;
+    cout<<"Constructor is called!"<<endl;
+}
 
-public: Car()
-        {
-            ReleaseYear = 2022;
-            customer = 'AUDI';
-            speed = 235;
-            cout<<"Constructor is called!"<<endl;
-        }
+void Car::getReleaseYear()
+{
+	// Print the ReleaseYear
+    cout<<"ReleaseYear :"<<ReleaseYear<<"\n";           
+}
 
-        void getReleaseYear()
-        {
-            cout<<"ReleaseYear :"<<ReleaseYear<<"\n";           
-        }
+void Car::getcustomer()
+{
+	// Print Car maker
+    cout<<"Car maker :"<<customer<<"\n";
+}
 
-        void getcustomer()
-        {
-            cout<<"Car maker :"<<customer<<"\n";
-        }
+void Car::getspeed()
+{
+	// Print Current speed
+    cout<<"Current speed :"<<speed<<"\n";
+}
 
-        void getspeed()
-        {
-            cout<<"Current speed :"<<speed<<"\n";
-        }
+void Car::accelerate()
+{
+	// Increase speed by 10 units
+    speed += 10;
+}
 
-        void accelerate()
-        {
-            speed = speed + 10;
-        }
+void Car::brake()
+{
+	// Decrease speed by 10 units
+    speed -= 10;
+}
 
-        void brake()
-        {
-            speed = speed - 10;
-        }
-        
-        ~Car()
-        {
-        	cout<<"Destructor is called!"<<endl;
-		}
-        
-};
+Car::~Car()
+{
+	 // Destructor definition
+	cout<<"Destructor is called!"<<endl;
+}
+
 
 int main()
 {
-    Car Audi;
+    Car Audi(2022, "AUDI", 220);
 
     for(int i=0; i<5; i++)
     {
